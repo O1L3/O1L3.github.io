@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/SpellingPopUp.gd" type="Script" id=1]
+
+[node name="SpelligPopUp" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 256.0
+margin_top = 472.0
+margin_right = -245.0
+margin_bottom = -5.0
+color = Color( 0.192157, 0.105882, 0.105882, 1 )
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect"]
+visible = false
+margin_left = -384.0
+margin_top = 712.0
+margin_right = 120.0
+margin_bottom = 778.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="hide" from="ColorRect" to="." method="_on_ColorRect_hide"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
